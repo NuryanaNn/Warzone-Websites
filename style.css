@@ -1,0 +1,2120 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+    --orange:#ffc436;
+    --red:#cd201f;
+    --purple:#6441a5;
+    --green:#25bb0d;
+    --white:#fff;
+    --black:#222c38;
+    --light-bg:#15233e;
+    --searchBox:#222d44;
+    --blue:#3b5998;
+    --pink:#ea4c89;
+    --aqua:#55acee;
+    --red:#dd4b39;
+    --card-bg:#15233e;
+    --bodyBg:#0f1b33;
+}
+
+/* Public  */
+.btnFill{
+    background: var(--orange);
+    color: #000;
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-family: 'Oxanium', cursive;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnFill:hover{
+    background: var(--white);
+    color: #000;
+    transition: 1s;
+}
+
+.btnNoFill{
+    background: var(--white);
+    color: #000;
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-family: 'Oxanium', cursive;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btnNoFill:hover{
+    background: var(--orange);
+    transition: 1s;
+}
+
+.btnNoFillBorder{
+    border:1px solid var(--white);
+    color: var(--white);
+    outline: none;
+    padding: 10px 10px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-family: 'Oxanium', cursive;
+    font-weight: 600;
+    background: transparent;
+}
+
+.btnNoFillBorder:hover{
+    background: var(--orange);
+    border: none;
+    transition: 1s;
+}
+
+.btnFillFinish{
+    background: green;
+    color: #000;
+    outline: none;
+    border: none;
+    padding: 10px 10px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    font-family: 'Oxanium', cursive;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Oxanium', cursive;
+}
+
+header{
+    padding: 1rem 7%;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 1s;
+    z-index: 5;
+}
+
+header.sticky{
+    background: var(--light-bg);
+    box-shadow: 1px 2px 3px 0 rgba(255, 255, 255, .3);
+}
+
+header .navbar{
+    display: block;
+    align-items: center;
+}
+
+header a{
+    color: var(--white);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: .9rem;
+    margin-right: 20px;
+}
+
+header a:hover{
+    color: var(--orange);
+}
+
+header .dropBtnMenu{
+    background: transparent;
+    color: var(--white);
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+header .dropBtnMenu:hover{
+    color: var(--orange);
+}
+
+header .dropdownMenu
+{
+    position: relative;
+    display: inline-block;
+    margin-right: 35px;
+}
+
+header .dropdown{
+    visibility: hidden;
+    position: absolute;
+    background: var(--white);
+    width: 135px;
+    box-shadow: 0px 8px 16px 0px solid rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    margin-top: 17px;
+    margin-left: -35px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+header .dropdown a::before{
+    content: '';
+    background: var(--black);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+header .dropdown a{
+    text-decoration: none;
+    padding: 12px 16px;
+    display: block;
+    text-transform: capitalize;
+    font-size: .8rem;
+    position: relative;
+    width: 100%;
+    color: var(--black);
+    font-weight: 600;
+}
+
+header .dropdown a:hover{
+    color: var(--orange);
+}
+
+header .dropdownMenu:hover .dropdown,
+header .dropdownMenuUser:hover .dropdownUser
+{
+    transition: 1s ease-in-out all;
+    visibility: visible;
+    transform: translateY(-15px);
+}
+
+
+
+
+/* Burger Menu */
+header .burger{
+    padding: 5px 2px;
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+header .burger .bars1{
+    background: var(--white);
+    width: 25px;
+    height: 3px;
+    margin-top: 3px;
+    border-radius: 3px;
+}
+
+
+
+/* Hidden Nav */
+nav .hiddenNav{
+    display: none;
+    z-index: 10;
+}
+
+nav .hiddenNav .logo{
+    width: 100px;
+}
+
+nav .hiddenNav.active{
+    left: 0;
+    transition: 1s;
+    z-index: 10;
+}
+
+nav .hiddenNav .navigation h3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+nav .hiddenNav .navigation a{
+    font-size: 1rem;
+}
+
+nav .hiddenNav .navigation li i{
+    font-size: .6rem;
+    cursor: pointer;
+}
+
+nav .hiddenNav .navigation{
+    list-style: none;
+}
+
+nav .hiddenNav ul li{
+    color: var(--white);
+    text-transform: capitalize;
+    padding: 10px;
+    list-style: none;
+}
+
+nav .hiddenNav .navigation li a{
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav .hiddenNav .navigation li h3::before{
+    content: '';
+    width: 100%;
+    height: .1px;
+    background: var(--black-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+nav .hiddenNav .navigator,
+nav .hiddenNav .navigator2,
+nav .hiddenNav .navigator3,
+nav .hiddenNav .navigator4,
+nav .hiddenNav .navigator5{
+    display: none;
+    margin-top: 20px;
+}
+
+nav .hiddenNav .navigator.active,
+nav .hiddenNav .navigator2.active,
+nav .hiddenNav .navigator3.active,
+nav .hiddenNav .navigator4.active,
+nav .hiddenNav .navigator5.active{
+    display: block;
+}
+
+nav .hiddenNav .navigation .navigator ul li a,
+nav .hiddenNav .navigation .navigator2 ul li a,
+nav .hiddenNav .navigation .navigator3 ul li a,
+nav .hiddenNav .navigation .navigator4 ul li a,
+nav .hiddenNav .navigation .navigator5 ul li a{
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: .9rem;
+    margin-left: 10px;
+    position: relative;
+    display: block;
+}
+
+nav .hiddenNav .navigation .navigator ul li a::before,
+nav .hiddenNav .navigation .navigator2 ul li a::before,
+nav .hiddenNav .navigation .navigator3 ul li a::before,
+nav .hiddenNav .navigation .navigator4 ul li a::before,
+nav .hiddenNav .navigation .navigator5 ul li a::before
+{
+    content: '';
+    background: var(--black-color);
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.banner{
+    width: 100%;
+    height: 650px;
+    z-index: -1;
+    position: relative;
+}
+
+.banner .cards{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-position-x: left;
+    object-fit: cover;
+}
+
+.banner .cards-1{
+    background: url('img/bg.jpg');
+}
+
+.banner .cards-2{
+    background: url('img/bg-2.jpg');
+}
+
+.banner .cards-3{
+    background: url('img/bg-3.jpg');
+}
+
+.banner .cards .contentText{
+    position: absolute;
+    left: 8%;
+    top: 30%;
+    max-width: 400px;
+}
+
+.banner .cards .contentText h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 2.5rem;
+}
+
+.banner .cards .contentText p{
+    margin-top: 15px;
+    color: var(--white);
+}
+
+.banner .cards .btn ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+
+/* Released Game */
+.contentTitle{
+    background: #0f1b33;
+    padding-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.release h3{
+    font-size: 1.8rem;
+}
+
+.contentTitle .title h3{
+    color: var(--white);
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 2.8rem;
+}
+
+.contentTitle .title p{
+    margin-top: 10px;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+/* Games */
+.newRelease{
+    background: #0f1b33;
+    padding: 30px 0;
+}
+
+.newRelease .contentBox .content{
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    gap: 115px;
+    width: 100%;
+    align-items: center;
+}
+
+.newRelease .contentBox .content .cards{
+    width: 250px;
+    max-height: 600px;
+    margin-left: -96px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.newRelease .contentBox .content .cards .images{
+    width: 100%;
+    position: relative;
+}
+
+.newRelease .contentBox .content .cards .details{
+    position: absolute;
+    z-index: 5;
+    bottom: 20px;
+    left: 20px;
+    padding-right: 15px;
+}
+
+.newRelease .contentBox .content .cards .details span{
+    background: var(--orange);
+    padding: 8px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.newRelease .contentBox .content .cards .details h3{
+    color: var(--white);
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+.newRelease .contentBox .content .cards:hover .details h3{
+    color: var(--orange);
+}
+
+.newRelease .contentBox .content .cards .rating{
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    color: var(--white);
+    text-transform: capitalize;
+    align-items: center;
+}
+
+.newRelease .contentBox .content .cards .rating i{
+    color: var(--orange);
+    margin-right: 5px;
+}
+
+.newRelease .contentBox .content .cards img{
+    width: 100%;
+    z-index: -2;
+}
+
+.newRelease .contentBox .content .cards:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+/* Big Match */
+.bigMatch{
+    background: url('img/bgBigMatch.jpg');
+    padding-bottom: 50px;
+    background-position: center;
+    background-size: cover;
+}
+
+.bigMatch h3{
+    font-size: 2.5rem;
+    margin-top: 10px;
+}
+
+.bigMatch .images{
+    max-width: 400px;
+}
+
+.bigMatch .images img{
+    width: 100%;
+}
+
+.bigMatch span{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    margin-top: 20px;
+}
+
+.bigMatch ul{
+    list-style: none;
+    display: inline-flex;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.bigMatch .times .time .timeHeader{
+    color: var(--black);
+    background: var(--orange);
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.bigMatch .times .time .days{
+    color: var(--black);
+    background: var(--white);
+    width: 60px;
+    height: 40px;
+    text-transform: capitalize;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+}
+
+.bigMatch button{
+    margin-top: 30px;
+}
+
+
+/* Gaming Tournament */
+.tournament .title h3{
+    font-size: 2.5rem;
+}
+
+.tournament ul{
+    margin-top: 30px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.tournament ul li{
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.tournament ul li:hover{
+    color: var(--orange);
+    cursor: pointer;
+    transition: 1s;
+}
+
+.tournament .cards .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 70px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.tournament .cards{
+    background:#09162f ;
+    padding: 0 100px 20px 100px;
+    margin-bottom: 30px;
+}
+
+.tournament .cards .content .team1 ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tournament .cards .content .score p{
+    font-size: 1.5rem;
+}
+
+.tournament .cards .content .time{
+    color: var(--white);
+    margin-top: 15px;
+    text-transform: capitalize;
+    font-size: .8rem;
+}
+
+.tournament .cards .content .live ul{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    color: var(--white);
+}
+
+.tournament .cards .content .live ul li i{
+    margin: 5px;
+}
+
+.tournament .cards .content .live ul li:nth-child(1) i{
+    color: var(--red);
+}
+
+.tournament .cards .content .live ul li:nth-child(2) i{
+    color: var(--purple);
+}
+
+.tournament .cards:hover .team1, .tournament .cards:hover .team2{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.tournament .cards:hover  ul li{
+    color: var(--orange);
+}
+
+/* Our Pro Player */
+.proPlayer{
+    background: url('img/bgProPlayer.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 50px;
+}
+
+.proPlayer .title h3{
+    font-size: 2.5rem;
+}
+
+.proPlayer .content{
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.proPlayer .content .cards{
+    position: relative;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+.proPlayer .content .cards .images{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.proPlayer .content .cards .images img{
+    width: 100%;
+}
+
+.proPlayer .content .cards .images .overlay{
+    position: absolute;
+    bottom: -90px;
+    width: 100%;
+    display: flex;
+    background: rgba(0, 0, 0, .5);
+    justify-content: center;
+    padding: 20px 0 20px 0;
+}
+
+.proPlayer .content .cards .images .overlay ul{
+    display: flex;
+    list-style: none;
+    column-gap: 20px;
+}
+
+.proPlayer .content .cards .images .overlay ul li i{
+    color: var(--white);
+    font-size: .9rem;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.proPlayer .content .cards .images .overlay ul li:hover i{
+    border-radius: 50%;
+    transition: .5s;
+    transform: translateY(-4px);
+}
+
+.proPlayer .content .cards .images .overlay ul li:nth-child(1) i{
+    background: var(--blue);
+}
+.proPlayer .content .cards .images .overlay ul li:nth-child(2) i{
+    background: var(--pink);
+}
+.proPlayer .content .cards .images .overlay ul li:nth-child(3) i{
+    background: var(--aqua);
+}
+.proPlayer .content .cards .images .overlay ul li:nth-child(4) i{
+    background: var(--red);
+}
+
+.proPlayer .content .cards:hover .overlay{
+    bottom: 0;
+    transition: 1s;
+}
+
+.proPlayer .content .cards:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.proPlayer .content .cards h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin-top: 15px;
+}
+
+.proPlayer .content .cards p{
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+.proPlayer .content .cards:hover  h3{
+    color: var(--orange);
+}
+
+/* New Games */
+.newGames{
+    background: #0f1b33;
+    padding: 80px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newGames .images{
+    max-width: 1000px;
+    overflow: hidden;
+}
+
+.newGames .images img{
+    width: 100%;
+}
+
+.newGames .images:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+
+/* Own Tournaments */
+.ownTournament{
+    background: url('img/bgTournament.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 2rem 8%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.ownTournament .contentText{
+    max-width: 400px;
+}
+
+.ownTournament .contentText h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 3rem;
+}
+
+.ownTournament .contentText p{
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.ownTournament button{
+    margin-top: 20px;
+}
+
+/* Gamming Product */
+.gammingProduct .title h3{
+    font-size: 2.5rem;
+}
+
+.gammingProduct .content{
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20px;
+
+}
+
+.gammingProduct .content .cards{
+    width: 300px;
+    background: var(--light-bg);
+    padding-bottom: 15px;
+}
+
+.gammingProduct .content .cards .images{
+    width: 100%;
+    overflow: hidden;
+}
+
+.gammingProduct .content .cards .images img{
+    width: 100%;
+}
+
+.gammingProduct .content .cards .contentText{
+    margin-top: 10px;
+}
+
+.gammingProduct .content .cards .contentText h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+
+.gammingProduct .content .cards .contentText p{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.gammingProduct .content .cards .contentText span i{
+    color: var(--orange);
+}
+
+.gammingProduct .content .cards button{
+    margin-top: 15px;
+}
+
+.gammingProduct .content .cards:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+/* Sponsored */
+.sponsored{
+    background: #0f1b33;
+    padding: 100px 8%;
+}
+.sponsored .content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+    flex-direction: row;
+    width: 100%;
+}
+
+.sponsored img{
+    width: 150px;
+    height: 150px;
+}
+
+/* NewsLatter */
+.newsLatter{
+    background: #0f1b33;
+    padding: 2rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 120px;
+}
+
+.newsLatter h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    text-align: center;
+    max-width: 400px;
+}
+
+.newsLatter .searchBox{
+    width: 500px;
+    height: 50px;
+    position: relative;
+}
+
+.newsLatter .searchBox{
+    margin-top: 50px;
+}
+
+.newsLatter .searchBox input{
+    padding: 13px;
+    width: 100%;
+    height: 100%;
+    background: var(--searchBox);
+    text-transform: capitalize;
+    color: var(--white);
+    outline: none;
+    border: 1px solid var(--white);
+}
+
+.newsLatter .searchBox button{
+    height: 100%;
+    font-size: .8rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Footer */
+.footer{
+    background: url('img/bgProPlayer.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 5%;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.footer .content{
+    width: 300px;
+}
+
+.footer .content p{
+    width: 200px;
+    margin-top: 15px;
+}
+
+.footer .content:nth-child(1){
+    color: #fff;
+}
+
+.footer .sci ul{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer .sci ul li{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .sci ul li:nth-child(1){
+    background: var(--blue);
+}
+.footer .sci ul li:nth-child(2){
+    background: var(--pink);
+}
+.footer .sci ul li:nth-child(3){
+    background: var(--aqua);
+}
+.footer .sci ul li:nth-child(4){
+    background: var(--red);
+}
+
+.footer .sci ul li:hover{
+    border-radius: 50%;
+    margin-top: 5px;
+    transition: .5s;
+}
+
+.footer .content ul{
+    list-style: none;
+    color: var(--white);
+}
+
+.footer .content ul li{
+    margin-top: 15px;
+}
+
+.footer .content ul li a{
+    color: var(--white);
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.footer .content ul li a:hover{
+    color: var(--orange);
+    transition: 1s;
+}
+
+
+.footer .content h3{
+    margin-top: 15px;
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.footer .content .thumbnails{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.footer .content .thumbnails .images{
+    width: 80px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.footer .content .thumbnails .images img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.footer .content .thumbnails .images:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.copyright{
+    background: var(--light-bg);
+    padding: 15px;
+    color: var(--white);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+/* =======================================About============================== */
+/* Banner About */
+.bannerAbout, 
+.bannerGames, 
+.bannerGallery, 
+.bannerTeam,
+.bannerPlayer,
+.bannersinglePlayer,
+.bannerLogin,
+.bannerSignUp{
+    background: url('img/bgProPlayer.jpg');
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.bannerAbout .aboutTitle h3,
+.bannerGames .aboutTitle h3,
+.bannerGallery .aboutTitle h3,
+.bannerTeam .aboutTitle h3,
+.bannerPlayer .aboutTitle h3,
+.bannersinglePlayer .aboutTitle h3,
+.bannerLogin .aboutTitle h3,
+.bannerSignUp .aboutTitle h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 3rem;
+}
+
+.bannerAbout p, 
+.bannerGames p,
+.bannerGallery p,
+.bannerTeam p,
+.bannerPlayer p,
+.bannersinglePlayer p,
+.bannerLogin p,
+.bannerSignUp p{
+    color: var(--white);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.contentAbout{
+    background: var(--light-bg);
+    padding: 2rem 8%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.contentAbout .contentText{
+    color: var(--white);
+    max-width: 500px;
+}
+
+.contentAbout .contentText h3{
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.contentAbout .contentText .contentUl{
+    list-style: none;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.contentAbout .contentText img{
+    background: var(--searchBox);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.contentAbout .contentText .text{
+    max-width: 270px;
+}
+
+.contentAbout .contentText .text ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.contentAbout .aboutImg .images{
+    max-width: 500px;
+    border-radius: 20px;
+}
+
+.contentAbout .aboutImg .images img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+ /* Released Game Section About */
+.releasedGames2{
+    background: url('img/bgProPlayer.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:100px 8%;
+}
+
+
+.releasedGames2 .title{
+    color: var(--white);
+    max-width: 500px;
+    text-align: center;
+}
+
+.releasedGames2 .title h3{
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}
+
+.releasedGames2 .title p{
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.releasedGames2 .content{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.releasedGames2 .content .cards .images, 
+.contentGames .cards .images{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.releasedGames2 .content .cards,
+.contentGames .cards{
+    background: var(--card-bg);
+    width: 250px;
+}
+
+.releasedGames2 .content .cards .images span, 
+.contentGames .cards .images span{
+    position: absolute;
+    background: var(--orange);
+    padding: 5px;
+    font-weight: 600;
+    text-transform: capitalize;
+    top: 10px;
+    left: 10px;
+}
+
+.releasedGames2 .content .cards img, 
+.contentGames .cards img{
+    width: 100%;
+}
+
+.releasedGames2 .content .cards:hover img, 
+.contentGames .cards:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.releasedGames2 .content .cards:hover .text h3, 
+.contentGames .cards:hover .text h3{
+    color: var(--orange);
+}
+
+.releasedGames2 .content .text,
+.contentGames .text{
+    padding: 10px;
+}
+
+.releasedGames2 .content .text h3,
+.contentGames .text h3{
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.releasedGames2 .content .text .rating ul,
+.contentGames .text .rating ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.releasedGames2 .content .text .rating ul li,
+.contentGames .text .rating ul li{
+    color: var(--white);
+}
+
+.releasedGames2 .content .text .rating ul li:nth-child(1),
+.contentGames .text .rating ul li:nth-child(1){
+    background: var(--light-bg);
+    padding: 5px;
+}
+
+.releasedGames2 .content .text .rating i,
+.contentGames .text .rating i{
+    color: var(--orange);
+}
+
+.releasedGames2 .content .text .rating p,
+.contentGames .text .rating p{
+    color: var(--white);
+}
+
+.releasedGames2 .content .text span,
+.contentGames .text span{
+    background: var(--orange);
+    font-weight: 600;
+    padding: 5px;
+}
+
+.sayAbout {
+    background: var(--light-bg);
+    padding: 2rem 8%;
+    width: 100%;
+    padding: 100px 0 !important;
+}
+
+.title{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.sayAbout .content{
+    gap: 10px;
+    display: flex;
+}
+
+.sayAbout .content .cards{
+    background: #09162f;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+}
+
+.sayAbout .content .cards .images{
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 20px;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+}
+
+.sayAbout .content .cards .images img{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.sayAbout .content .cards:hover .images img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.sayAbout .content .cards h3{
+    font-size: 1.5rem;
+    margin-top: 15px;
+    text-transform: capitalize;
+}
+
+.sayAbout .content .cards h4{
+    font-size: 1rem;
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+.sayAbout .content .cards .rating{
+    margin-top: 10px;
+}
+
+.sayAbout .content .cards .rating i{
+    color: var(--orange);
+}
+
+.sayAbout .content .cards p{
+    margin-top: 10px;
+    width: 250px;
+}
+
+/* ==========================Our Games======================= */
+.contentGames{
+    padding-top: 30px;
+    background: #09162f;
+    display: flex;
+    padding: 2rem 8%;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+.contentGames .content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 900px;
+    gap: 30px;
+    justify-content: center;
+    position: relative;
+}
+
+.contentGames .sidebar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.contentGames .sidebar ul li{
+    background: var(--searchBox);
+}
+
+.contentGames .sidebar ul li input{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--white);
+    background: var(--searchBox);
+}
+
+.contentGames .sidebar .range,
+.contentGames .sidebar .platform,
+.contentGames .sidebar .genres{
+    padding: 5px 10px;
+}
+
+.contentGames .sidebar ul li h3{
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+.contentGames .sidebar ul li i{
+    margin-right: 15px;
+    color: var(--orange);
+}
+
+.contentGames .sidebar ul li a{
+    color: var(--white);
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.contentGames .sidebar ul li .cards{
+    border-radius: 10px;
+}
+
+.contentGames .sidebar ul li .cards .images{
+    border-radius: 10px;
+    height: 100%;
+}
+
+.contentGames .sidebar ul li .cards .images img{
+    object-fit: cover;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.pagination{
+    background: #09162f;
+    display: flex;
+    justify-content: center;
+    padding: 60px;
+}
+
+.pagination ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    color: var(--white);
+}
+
+.pagination ul li{
+    background: var(--light-bg);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pagination ul li:hover{
+    background: var(--orange);
+    transition: 1s;
+}
+
+
+/* ====================Section Gallery================== */
+.gallery{
+    display: flex;
+    gap: 20px;
+    padding: 100px 8%;
+    background: #09162f;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery .cards{
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery .cards .overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--white);
+    background:rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.gallery .cards:hover .overlay{
+    visibility:visible;
+    transition: 1s;
+}
+
+.gallery .cards .overlay i{
+    border: 1px solid var(--white);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.gallery .cards .overlay i:hover{
+    background: var(--orange);
+    transition: 1s;
+}
+
+/* ====================== Section Team================== */
+.team{
+    background: var(--light-bg);
+    padding: 100px 8%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team .cards{
+    background: #09162f;
+    max-width: 300px;
+    padding: 100px 50px;
+}
+
+.team .cards .text{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.team .cards .text h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+
+.team .cards .text p{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+/* ================Section Player==================== */
+.player{
+    background: #09162f;
+    display: flex;
+    padding: 100px 8%;
+}
+
+.player .content{
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.player .content .cards{
+    position: relative;
+    max-width: 250px;
+    overflow: hidden;
+}
+
+.player .content .cards .images{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.player .content .cards .images img{
+    width: 100%;
+}
+
+.player .content .cards .images .overlay{
+    position: absolute;
+    bottom: -90px;
+    width: 100%;
+    display: flex;
+    background: rgba(0, 0, 0, .5);
+    justify-content: center;
+    padding: 20px 0 20px 0;
+}
+
+.player .content .cards .images .overlay ul{
+    display: flex;
+    list-style: none;
+    column-gap: 20px;
+}
+
+.player .content .cards .images .overlay ul li i,
+.login .cards .sci li i{
+    color: var(--white);
+    font-size: .9rem;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.player .content .cards .images .overlay ul li:hover i{
+    border-radius: 50%;
+    transition: .5s;
+    transform: translateY(-4px);
+}
+
+.player .content .cards .images .overlay ul li:nth-child(1) i{
+    background: var(--blue);
+}
+.player .content .cards .images .overlay ul li:nth-child(2) i{
+    background: var(--pink);
+}
+.player .content .cards .images .overlay ul li:nth-child(3) i{
+    background: var(--aqua);
+}
+.player .content .cards .images .overlay ul li:nth-child(4) i{
+    background: var(--red);
+}
+
+.player .content .cards:hover .overlay{
+    bottom: 0;
+    transition: 1s;
+}
+
+.player .content .cards:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.player .content .cards h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin-top: 15px;
+}
+
+.player .content .cards p{
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+.player .content .cards:hover  h3{
+    color: var(--orange);
+}
+
+/* ===========================Section SinglePlayer============================== */
+.profile{
+    background: #09162f;
+    padding: 100px 8%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--white);
+}
+
+.profile .images{
+    overflow: hidden;
+}
+
+.profile .detailsProfile{
+    max-width: 400px;
+}
+
+.profile:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.profile .detailsProfile h3{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.profile:hover .detailsProfile h3{
+    color: var(--orange);
+}
+
+.profile .detailsProfile span{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
+
+.profile .detailsProfile p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.profile .detailsProfile table tr td{
+    text-transform: capitalize;
+    padding: 3px 0;
+}
+
+.profile .detailsProfile table tr td ul{
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+.profile .detailsProfile table tr td ul li{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Icons Public */
+.profile .detailsProfile table tr td ul li:nth-child(1),
+.login .cards .sci li:nth-child(1),
+.signUp .cards .sci li:nth-child(1){
+    background: var(--blue);
+}
+.profile .detailsProfile table tr td ul li:nth-child(2),
+.login .cards .sci li:nth-child(2),
+.signUp .cards .sci li:nth-child(2){
+    background: var(--pink);
+}
+.profile .detailsProfile table tr td ul li:nth-child(3),
+.login .cards .sci li:nth-child(3),
+.signUp .cards .sci li:nth-child(3){
+    background: var(--aqua);
+}
+.profile .detailsProfile table tr td ul li:nth-child(4),
+.login .cards .sci li:nth-child(4),
+.signUp .cards .sci li:nth-child(4){
+    background: var(--red);
+}
+
+.record{
+    display: flex;
+    background: #09162f;
+    padding: 50px 6%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.record .gameSummary{
+    max-width: 650px;
+}
+
+.record .gameSummary .summary .cards {
+    margin-bottom: 20px;
+    background: var(--card-bg);
+    padding: 10px;
+}
+
+.record .gameSummary .summary .cards .content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap-reverse;
+    row-gap: 20px;
+}
+
+.record h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.record .gameSummary .summary .cards .content .team1 ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+.record .gameSummary .summary .cards .content .match ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.record .gameSummary .summary .cards .content .match .score ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: capitalize;
+    gap: 30px;
+    color: var(--white);
+}
+
+.record .gameSummary .summary .cards .content .match .time{
+    margin-top: 15px;
+    color: var(--white);
+    text-transform: capitalize;
+    text-align: center;
+    font-size: .9rem;
+    margin-bottom: 15px;
+}
+
+.record .gameSummary .summary .cards .content .live ul{
+    display: flex;
+    gap: 10px;
+    color: var(--white);
+}
+
+.record .gameSummary .summary .cards .content .live ul li i{
+    margin-right: 5px;
+}
+
+.record .gameSummary .summary .cards .content .live ul li:nth-child(1) i{
+    color: var(--red);
+}
+
+.record .gameSummary .summary .cards .content .live ul li:nth-child(2) i{
+    color: var(--purple);
+}
+
+.record .video{
+    max-width: 500px;
+    text-align: center;
+}
+
+.record .video ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.record .video ul li .images{
+    width: 100px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.record .video ul li .images i{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: var(--black);
+    background: var(--white);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.record .video ul li .images img{
+    width: 100%;
+}
+
+.record .video ul li .images:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+
+/* =============section Login======================= */
+.login, .signUp{
+    background: var(--bodyBg);
+    padding: 50px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .cards, .signUp .cards{
+    background: var(--card-bg);
+    padding:50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login .cards .form, .signUp .cards .form{
+    list-style: none;
+    width: 100%;
+}
+
+.login .cards .form li, .signUp .cards .form li{
+    color: var(--white);
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+.login .cards .form li input, .signUp .cards .form li input{
+    width: 100%;
+    padding: 15px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.login .cards .remember ul{
+    color: var(--white);
+    display: flex;
+    list-style: none;
+    margin-top: 15px;
+    column-gap: 15px;
+    text-transform: capitalize;
+    font-size: .8rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .cards .remember ul a{
+    color: var(--white);
+    text-decoration: none;
+}
+
+.login .cards button, .signUp .cards button{
+    margin-top: 20px;
+
+}
+
+.login .cards h4, .signUp .cards h4{
+    margin-top: 20px;
+    color: var(--white);
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    font-size: .8rem;
+}
+
+.login .cards span, .signUp .cards span{
+    display: block;
+    color: var(--white);
+    background: var(--orange);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+}
+
+.login .cards h3, .signUp .cards h3{
+    color: var(--white);
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+.login .cards .sci, .signUp .cards .sci{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.login .cards .sci li, .signUp .cards .sci li{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sign Up */
+.signUp .cards .form .birth{
+    list-style: none;
+    display: flex;
+    gap: 2px;
+}
+
+.signUp .cards .form .birth select, 
+.signUp .cards .form .country select,
+.signUp .cards .form .provency select,
+.signUp .cards .form .phoneNumber select{
+    padding: 15px;
+    text-transform: capitalize;
+    color: grey;
+    outline: none;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.signUp .cards .form .phoneNumber{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+/* 404 */
+.notFound{
+    background: url('img/bg404.png');
+    background-color: #09162f;
+    padding: 150px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.notFound .images{
+    max-width: 700px;
+}
+
+.notFound .images img{
+    width: 100%;
+}
+
+.notFound button{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:980px){
+    header .navbar{
+        display: none;
+        transition: 1s;
+    }
+
+    header  .burger{
+        display: block;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        padding: 6px 3px;
+        margin-right: -10px;
+    }
+
+    nav .hiddenNav{
+        position: fixed;
+        background: var(--light-bg);
+        width: 55%;
+        padding: 1rem 1rem;
+        top: 0;
+        height: 100%;
+        left: -100%;
+        transition: 1s;
+        display: block;
+        padding-top: 3rem;
+    }
+}
+
+
+@media(max-width:480px){
+
+    .newRelease .contentBox .content .cards .details{
+        bottom: 30px;
+    }
+
+    .tournament .cards .content .team1 ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .newsLatter .searchBox{
+        width: 300px;
+        height: 50px;
+        position: relative;
+    }
+
+    /* About */
+    .releasedGames2 .content .cards{
+        width: 300px;
+    }
+
+    /* Games */
+    .contentGames{
+        flex-wrap: wrap-reverse;
+    }
+
+    /* Single Player */
+    .record{
+        text-align: center;
+    }
+
+    .record .gameSummary .summary .cards .content .team1 ul{
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    /* 404 */
+    .notFound{
+        background: url('img/bg404.png');
+        background-color: #09162f;
+        padding: 250px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,7 +6,7 @@
     --purple:#6441a5;
     --green:#25bb0d;
     --white:#fff;
-    --black:#222c38;
+    --black-color:#222c38;
     --light-bg:#15233e;
     --searchBox:#222d44;
     --blue:#3b5998;
@@ -15,6 +15,11 @@
     --red:#dd4b39;
     --card-bg:#15233e;
     --bodyBg:#0f1b33;
+    --sticky-header:#212c43;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 /* Public  */
@@ -24,7 +29,7 @@ button{
 
 .btnFill{
     background: var(--orange);
-    color: #000;
+    color: var(--black-color);
     outline: none;
     border: none;
     padding: 10px 10px;
@@ -37,13 +42,13 @@ button{
 
 .btnFill:hover{
     background: var(--white);
-    color: #000;
+    color: var(--black-color);
     transition: 1s;
 }
 
 .btnNoFill{
     background: var(--white);
-    color: #000;
+    color: var(--black-color);
     outline: none;
     border: none;
     padding: 10px 10px;
@@ -80,8 +85,8 @@ button{
 }
 
 .btnFillFinish{
-    background: green;
-    color: #000;
+    background: var(--green);
+    color: var(--white);
     outline: none;
     border: none;
     padding: 10px 10px;
@@ -121,7 +126,7 @@ header{
 
 header.sticky{
     background: var(--light-bg);
-    box-shadow: 1px 2px 3px 0 rgba(255, 255, 255, .3);
+    box-shadow: 1px 2px 3px 0 var(--sticky-header);
 }
 
 header .navbar{
@@ -407,11 +412,12 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     color: var(--white);
     text-transform: capitalize;
     text-align: center;
-    font-size: 2.8rem;
+    font-size: 2rem;
 }
 
 .contentTitle .title p{
     margin-top: 10px;
+    max-width: 300px;
     color: var(--white);
     font-size: 1rem;
 }
@@ -560,10 +566,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 
 /* Gaming Tournament */
-.tournament .title h3{
-    font-size: 2.5rem;
-}
-
 .tournament ul{
     margin-top: 30px;
     list-style: none;
@@ -712,19 +714,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     transform: translateY(-4px);
 }
 
-.proPlayer .content .cards .images .overlay ul li:nth-child(1) i{
-    background: var(--blue);
-}
-.proPlayer .content .cards .images .overlay ul li:nth-child(2) i{
-    background: var(--pink);
-}
-.proPlayer .content .cards .images .overlay ul li:nth-child(3) i{
-    background: var(--aqua);
-}
-.proPlayer .content .cards .images .overlay ul li:nth-child(4) i{
-    background: var(--red);
-}
-
 .proPlayer .content .cards:hover .overlay{
     bottom: 0;
     transition: 1s;
@@ -807,10 +796,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 }
 
 /* Gamming Product */
-.gammingProduct .title h3{
-    font-size: 2.5rem;
-}
-
 .gammingProduct .content{
     margin-top: 20px;
     display: flex;
@@ -919,7 +904,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .newsLatter h3{
     color: var(--white);
     text-transform: capitalize;
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
     max-width: 400px;
 }
@@ -993,22 +978,36 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     justify-content: center;
 }
 
+.player .content .cards .images .overlay ul li:nth-child(1) i,
+.proPlayer .content .cards .images .overlay ul li:nth-child(1) i,
 .footer .sci ul li:nth-child(1){
     background: var(--blue);
 }
+
+.player .content .cards .images .overlay ul li:nth-child(2) i,
+.proPlayer .content .cards .images .overlay ul li:nth-child(2) i,
 .footer .sci ul li:nth-child(2){
     background: var(--pink);
 }
+
+.player .content .cards .images .overlay ul li:nth-child(3) i,
+.proPlayer .content .cards .images .overlay ul li:nth-child(3) i,
 .footer .sci ul li:nth-child(3){
     background: var(--aqua);
 }
+
+.player .content .cards .images .overlay ul li:nth-child(4) i,
+.proPlayer .content .cards .images .overlay ul li:nth-child(4) i,
 .footer .sci ul li:nth-child(4){
     background: var(--red);
 }
 
+.player .content .cards .images .overlay ul li:hover i,
+.login .cards .sci li:hover,
+.signUp .sci li:hover,
 .footer .sci ul li:hover{
     border-radius: 50%;
-    margin-top: 5px;
+    transform: translateY(-5px);
     transition: .5s;
 }
 
@@ -1081,7 +1080,8 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerSignUp,
 .bannerMatch,
 .bannerProduct,
-.bannerdetailsProduct{
+.bannerdetailsProduct,
+.bannerCart{
     background: url('img/bgProPlayer.jpg');
     height: 400px;
     background-position: center;
@@ -1103,7 +1103,8 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerSignUp .aboutTitle h3,
 .bannerMatch .aboutTitle h3,
 .bannerProduct .aboutTitle h3,
-.bannerdetailsProduct .aboutTitle h3{
+.bannerdetailsProduct .aboutTitle h3,
+.bannerCart .aboutTitle h3{
     color: var(--white);
     text-transform: capitalize;
     font-size: 3rem;
@@ -1119,7 +1120,8 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerSignUp p,
 .bannerMatch p,
 .bannerProduct p,
-.bannerdetailsProduct p{
+.bannerdetailsProduct p,
+.bannerCart p{
     color: var(--white);
     font-size: 1.1rem;
     text-transform: capitalize;
@@ -1153,10 +1155,13 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     flex-wrap: wrap;
 }
 
-.contentAbout .contentText img{
+.contentAbout .contentText .contentUl .icn{
     background: var(--searchBox);
-    padding: 10px;
     border-radius: 50%;
+}
+
+.contentAbout .contentText img{
+    padding: 10px;
 }
 
 .contentAbout .contentText .text{
@@ -1420,6 +1425,8 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     padding: 5px;
     border: 1px solid var(--white);
     background: var(--searchBox);
+    outline: none;
+    border: none;
 }
 
 .contentGames .sidebar .range,
@@ -1444,7 +1451,8 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     text-transform: capitalize;
 }
 .contentGames .sidebar ul li .cards{
-    border-radius: 10px;
+    overflow: hidden;
+    height: 350px;
 }
 
 .contentGames .sidebar ul li .cards .images{
@@ -1503,6 +1511,11 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .gallery .cards{
     position: relative;
     cursor: pointer;
+    max-width: 300px;
+}
+
+.gallery .cards img{
+    width: 100%;
 }
 
 .gallery .cards .overlay{
@@ -1547,8 +1560,18 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 .team .cards{
     background: #09162f;
-    max-width: 300px;
-    padding: 100px 50px;
+    max-width: 250px;
+    padding: 50px 50px;
+}
+
+.team .cards .images{
+    width: 100%;
+    height: 200px;
+}
+
+.team .cards .images img{
+    width: 100%;
+    height: 100%;
 }
 
 .team .cards .text{
@@ -1622,14 +1645,15 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     padding: 8px;
     cursor: pointer;
 }
-
-.player .content .cards .images .overlay ul li:hover i{
+/* 
+.player .content .cards .images .overlay ul li:hover i,
+.login .cards .sci li:hover{
     border-radius: 50%;
     transition: .5s;
     transform: translateY(-4px);
-}
+} */
 
-.player .content .cards .images .overlay ul li:nth-child(1) i{
+/* .player .content .cards .images .overlay ul li:nth-child(1) i{
     background: var(--blue);
 }
 .player .content .cards .images .overlay ul li:nth-child(2) i{
@@ -1640,7 +1664,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 }
 .player .content .cards .images .overlay ul li:nth-child(4) i{
     background: var(--red);
-}
+} */
 
 .player .content .cards:hover .overlay{
     bottom: 0;
@@ -1733,6 +1757,10 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     border-radius: 50%;
 }
 
+.profile .detailsProfile table tr td ul li a{
+    color: var(--white);
+}
+
 /* Icons Public */
 .profile .detailsProfile table tr td ul li:nth-child(1),
 .login .cards .sci li:nth-child(1),
@@ -1774,6 +1802,11 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     padding: 10px;
 }
 
+.record .gameSummary .summary .cards:hover img {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
 .record .gameSummary .summary .cards .content{
     display: flex;
     flex-direction: row;
@@ -1791,7 +1824,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     margin-bottom: 15px;
 }
 
-.record .gameSummary .summary .cards .content .team1 ul{
+.record .gameSummary .summary .cards .content .team1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1801,7 +1834,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     font-size: 1.5rem;
     font-weight: 800;
     text-transform: capitalize;
+    flex-direction: column;
 }
+
 
 .record .gameSummary .summary .cards .content .match ul{
     display: flex;
@@ -1866,16 +1901,17 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 }
 
 .record .video ul li .images{
-    width: 100px;
+    width: 150px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .record .video ul li .images i{
     position: absolute;
-    top: 30%;
-    left: 30%;
+    top: 35%;
+    left: 39%;
     color: var(--black);
     background: var(--white);
     width: 30px;
@@ -1944,7 +1980,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     justify-content: center;
 }
 
-.login .cards .remember ul a{
+.login .cards .remember ul a,
+.login .cards a,
+.signUp .cards a{
     color: var(--white);
     text-decoration: none;
 }
@@ -1994,6 +2032,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    color: var(--white);
+    transition: 1s;
 }
 
 /* Sign Up */
@@ -2117,7 +2158,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 /* Product Details */
 .contentProductDetails{
-    background: #09162f;
+    background: var(--bodyBg);
     display: flex;
     justify-content: center;
     padding: 50px 8%;
@@ -2132,7 +2173,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 .contentProductDetails .product .images{
     width: 500px;
-    background: #15233e;
 }
 
 .contentProductDetails .product .images img{
@@ -2149,7 +2189,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     flex-wrap: wrap;
     max-width: 500px;
     gap: 5px;
-    margin-top: -10px;
 }
 
 
@@ -2163,12 +2202,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     height: 100%;
     border-radius: 10px;
 }
-
-
-
-
-
-
 
 .contentProductDetails .detailsProduct{
     max-width: 500px;
@@ -2232,7 +2265,55 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     list-style: none;
 }
 
+/* Shop cart */
+.productShop{
+    padding: 50px 8%;
+    background: var(--bodyBg);
+}
 
+.productShop table{
+    width: 100%;
+}
+
+.productShop table th{
+    background: var(--orange);
+    text-transform: capitalize;
+    padding: 10px;
+}
+
+.productShop table tr{
+    margin-top: 20px;
+}
+
+.productShop table tr td .images{
+    width: 100px;
+    height: 100px;
+}
+
+.productShop table tr td .images img{
+    width: 100%;
+    height: 100%;
+}
+
+.productShop table tr td {
+    color: var(--white);
+    text-align: center;
+}
+
+.productShop table tr td ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.productShop .quantityForm{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
 
 

@@ -2091,7 +2091,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     row-gap: 100px;
 }
 
-.contentProductDetails .product .cards{
+.contentProductDetails .product{
     max-width: 400px;
 }
 
@@ -2099,6 +2099,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     display: flex;
     list-style: none;
     color: var(--white);
+    margin-top: 20px;
+    gap: 10px;
+    text-transform: capitalize;
 }
 
 .contentProductDetails .product .images{
@@ -2315,8 +2318,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 }
 
 .blogContent .blog .blogText ul li i{
-    color: var(--orange);
-    margin-right: 5px;
+    color: var(--white);
 }
 
 .blogContent .blog .blogText p,
@@ -2354,7 +2356,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .blogContent h3,
 .blogContent .messagesBox h3,
 .contentContact .contact h3,
-.contentContact .messagesBoxh3{
+.contentContact .messagesBox h3{
     color: var(--white);
     text-transform: capitalize;
     font-size: 2rem;
@@ -2633,6 +2635,12 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
     .blogContent .blogSider .searchBox{
         display: none;
+    }
+
+    /* About */
+    .contentAbout .aboutImg .images{
+        max-width: 400px;
+        border-radius: 20px;
     }
 }
 

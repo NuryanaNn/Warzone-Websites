@@ -632,11 +632,13 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     margin: 5px;
 }
 
-.tournament .cards .content .live ul li:nth-child(1) i{
+.tournament .cards .content .live ul li:nth-child(1) i,
+.record .gameSummary .summary .cards .content .live ul li:nth-child(1) i{
     color: var(--red);
 }
 
-.tournament .cards .content .live ul li:nth-child(2) i{
+.tournament .cards .content .live ul li:nth-child(2) i,
+.record .gameSummary .summary .cards .content .live ul li:nth-child(2) i{
     color: var(--purple);
 }
 
@@ -876,6 +878,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     background: #0f1b33;
     padding: 100px 8%;
 }
+
 .sponsored .content{
     display: flex;
     justify-content: center;
@@ -980,32 +983,49 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 .player .content .cards .images .overlay ul li:nth-child(1) i,
 .proPlayer .content .cards .images .overlay ul li:nth-child(1) i,
-.footer .sci ul li:nth-child(1){
+.footer .sci ul li:nth-child(1),
+.profile .detailsProfile table tr td ul li:nth-child(1),
+.login .cards .sci li:nth-child(1),
+.signUp .cards .sci li:nth-child(1),
+.blogContent .tagsAndShare .share li:nth-child(1){
     background: var(--blue);
 }
 
 .player .content .cards .images .overlay ul li:nth-child(2) i,
 .proPlayer .content .cards .images .overlay ul li:nth-child(2) i,
-.footer .sci ul li:nth-child(2){
+.footer .sci ul li:nth-child(2),
+.profile .detailsProfile table tr td ul li:nth-child(2),
+.login .cards .sci li:nth-child(2),
+.signUp .cards .sci li:nth-child(2),
+.blogContent .tagsAndShare .share li:nth-child(2){
     background: var(--pink);
 }
 
 .player .content .cards .images .overlay ul li:nth-child(3) i,
 .proPlayer .content .cards .images .overlay ul li:nth-child(3) i,
-.footer .sci ul li:nth-child(3){
+.footer .sci ul li:nth-child(3),
+.profile .detailsProfile table tr td ul li:nth-child(3),
+.login .cards .sci li:nth-child(3),
+.signUp .cards .sci li:nth-child(3),
+.blogContent .tagsAndShare .share li:nth-child(3){
     background: var(--aqua);
 }
 
 .player .content .cards .images .overlay ul li:nth-child(4) i,
 .proPlayer .content .cards .images .overlay ul li:nth-child(4) i,
-.footer .sci ul li:nth-child(4){
+.footer .sci ul li:nth-child(4),
+.profile .detailsProfile table tr td ul li:nth-child(4),
+.login .cards .sci li:nth-child(4),
+.signUp .cards .sci li:nth-child(4),
+.blogContent .tagsAndShare .share li:nth-child(4){
     background: var(--red);
 }
 
 .player .content .cards .images .overlay ul li:hover i,
 .login .cards .sci li:hover,
 .signUp .sci li:hover,
-.footer .sci ul li:hover{
+.footer .sci ul li:hover,
+.blogContent .tagsAndShare .share li:hover {
     border-radius: 50%;
     transform: translateY(-5px);
     transition: .5s;
@@ -1081,7 +1101,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerMatch,
 .bannerProduct,
 .bannerdetailsProduct,
-.bannerCart{
+.bannerCart,
+.bannerBlog,
+.bannerBlogSinglePage{
     background: url('img/bgProPlayer.jpg');
     height: 400px;
     background-position: center;
@@ -1104,7 +1126,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerMatch .aboutTitle h3,
 .bannerProduct .aboutTitle h3,
 .bannerdetailsProduct .aboutTitle h3,
-.bannerCart .aboutTitle h3{
+.bannerCart .aboutTitle h3,
+.bannerBlog .aboutTitle h3,
+.bannerBlogSinglePage .aboutTitle h3{
     color: var(--white);
     text-transform: capitalize;
     font-size: 3rem;
@@ -1121,7 +1145,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerMatch p,
 .bannerProduct p,
 .bannerdetailsProduct p,
-.bannerCart p{
+.bannerCart p,
+.bannerBlog p,
+.bannerBlogSinglePage p{
     color: var(--white);
     font-size: 1.1rem;
     text-transform: capitalize;
@@ -1645,26 +1671,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     padding: 8px;
     cursor: pointer;
 }
-/* 
-.player .content .cards .images .overlay ul li:hover i,
-.login .cards .sci li:hover{
-    border-radius: 50%;
-    transition: .5s;
-    transform: translateY(-4px);
-} */
-
-/* .player .content .cards .images .overlay ul li:nth-child(1) i{
-    background: var(--blue);
-}
-.player .content .cards .images .overlay ul li:nth-child(2) i{
-    background: var(--pink);
-}
-.player .content .cards .images .overlay ul li:nth-child(3) i{
-    background: var(--aqua);
-}
-.player .content .cards .images .overlay ul li:nth-child(4) i{
-    background: var(--red);
-} */
 
 .player .content .cards:hover .overlay{
     bottom: 0;
@@ -1761,28 +1767,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     color: var(--white);
 }
 
-/* Icons Public */
-.profile .detailsProfile table tr td ul li:nth-child(1),
-.login .cards .sci li:nth-child(1),
-.signUp .cards .sci li:nth-child(1){
-    background: var(--blue);
-}
-.profile .detailsProfile table tr td ul li:nth-child(2),
-.login .cards .sci li:nth-child(2),
-.signUp .cards .sci li:nth-child(2){
-    background: var(--pink);
-}
-.profile .detailsProfile table tr td ul li:nth-child(3),
-.login .cards .sci li:nth-child(3),
-.signUp .cards .sci li:nth-child(3){
-    background: var(--aqua);
-}
-.profile .detailsProfile table tr td ul li:nth-child(4),
-.login .cards .sci li:nth-child(4),
-.signUp .cards .sci li:nth-child(4){
-    background: var(--red);
-}
-
 .record{
     display: flex;
     background: #09162f;
@@ -1837,6 +1821,11 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     flex-direction: column;
 }
 
+.record .gameSummary .summary .cards .content .team1 img {
+    width: 100px;
+    height: 100px;
+}
+
 
 .record .gameSummary .summary .cards .content .match ul{
     display: flex;
@@ -1877,14 +1866,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 .record .gameSummary .summary .cards .content .live ul li i{
     margin-right: 5px;
-}
-
-.record .gameSummary .summary .cards .content .live ul li:nth-child(1) i{
-    color: var(--red);
-}
-
-.record .gameSummary .summary .cards .content .live ul li:nth-child(2) i{
-    color: var(--purple);
 }
 
 .record .video{
@@ -1982,7 +1963,8 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 .login .cards .remember ul a,
 .login .cards a,
-.signUp .cards a{
+.signUp .cards a,
+.blogContent .tagsAndShare .share a{
     color: var(--white);
     text-decoration: none;
 }
@@ -2171,6 +2153,12 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     max-width: 500px;
 }
 
+.contentProductDetails .product .cards .review{
+    display: flex;
+    list-style: none;
+    color: var(--white);
+}
+
 .contentProductDetails .product .images{
     width: 500px;
 }
@@ -2315,12 +2303,319 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     margin-top: 20px;
 }
 
+/* ==================Blog content ===================*/
+.blogContent{
+    background: var(--bodyBg);
+    padding: 80px 8%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.blogContent .blog{
+    max-width: 800px;
+}
+
+.blogContent .blog .cards{
+    margin-bottom: 30px;
+}
+
+.blogContent .blog .images{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.blogContent .blog .images:hover img{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.blogContent .blog .images img{
+    width: 100%;
+    height: 100%;
+}
+
+.blogContent .blog .blogText{
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: -20px;
+    z-index: 1;
+    border: 2px solid var(--searchBox);
+}
+
+.blogContent .blog .blogText h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 1.7rem;
+}
+
+.blogContent .blog .blogText .details{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    row-gap: 10px;
+    text-transform: capitalize;
+}
+
+.blogContent .blog .blogText ul li{
+    color: var(--white);
+}
+
+.blogContent .blog .blogText .imgSingleBlog{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    list-style: none;
+}
+
+.blogContent .blog .blogText ul li i{
+    color: var(--orange);
+    margin-right: 5px;
+}
+
+.blogContent .blog .blogText p,
+.blogContent .blog .blogText span{
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.blogContent .blog .blogText span{
+    text-transform: capitalize;
+}
+
+.blogContent .blogSider{
+    max-width: 300px;
+    list-style: none;
+    position: relative;
+}
+
+.blogContent .blogSider .cards{
+    background: var(--card-bg);
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.blogContent .blogSider input{
+    width: 250px;
+    padding: 10px;
+    background: var(--searchBox);
+    border: 1px solid var(--white);
+}
+
+.blogContent .blogSider .cards h3,
+.blogContent h3,
+.blogContent .messagesBox h3{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+.blogContent .blogSider .cards table{
+    width: 100%;
+}
+
+.blogContent .blogSider .cards table tr td{
+    color: var(--white);
+    text-transform: capitalize;
+    font-size: .8rem;
+    padding: 10px 0;
+}
+
+.blogContent .blogSider .cards .contentPopular {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.blogContent .blogSider .cards .popularPost {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.blogContent .blogSider .cards .popularPost h4,
+.blogContent .commentContent .content h4{
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+.blogContent .blogSider .cards .popularPost p,
+.blogContent .commentContent .content p{
+    color: var(--white);
+    text-transform: capitalize;
+    margin-top: 10px;
+}
+
+.blogContent .blogSider .cards .tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    margin-top: 8px;
+}
+
+.blogContent .blogSider .cards .tags a{
+    color: var(--white);
+    text-decoration: none;
+    text-transform: capitalize;
+    background: var(--bodyBg);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.blogContent .blogSider .cards img{
+    width: 100%;
+}
+
+
+/* Single Pages */
+.descriptionBlog{
+    margin-top: 15px;
+    border-radius: 5px;
+    background: var(--bodyBg);
+    color: var(--white);
+    padding: 10px 5px;
+}
+
+.descriptionBlog h4{
+    text-align: center;
+}
+
+.blogContent .tagsAndShare{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+.blogContent .tagsAndShare .tags ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    column-gap: 20px;
+    row-gap: 10px;
+    text-transform: capitalize;
+    flex-wrap: wrap;
+}
+
+.blogContent .tagsAndShare .share{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    column-gap: 10px;
+    row-gap: 10px;
+    text-transform: capitalize;
+    flex-wrap: wrap;
+}
+
+.blogContent .tagsAndShare .share i{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blogContent .commentContent{
+    list-style: none;
+    row-gap: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blogContent .commentContent li:nth-child(2){
+    margin-left: 30px;
+}
+
+.blogContent .commentContent .content{
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    list-style: none;
+    position: relative;
+}
+
+.blogContent .commentContent .content span{
+    position: absolute;
+    right: 10px;
+    color: var(--white);
+}
+
+.blogContent .commentContent .content span i{
+    margin-right: 5px;
+}
+
+.blogContent .commentContent .content .images{
+    width: 100px;
+    height: 100px;
+}
+
+.blogContent .commentContent .content .images img{
+    width: 100%;
+    height: 100%;
+}
+
+.blogContent .commentContent .content p{
+    max-width: 500px;
+}
+
+.blogContent .messagesBox{
+    margin-top: 30px;
+}
+
+.blogContent .messagesBox h3{
+    margin-top: 30px;
+}
+
+.blogContent .messagesBox .content{
+    list-style: none;
+}
+
+.blogContent .messagesBox .content ul{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.blogContent .messagesBox .content li{
+    margin-bottom: 10px;
+}
+
+.blogContent .messagesBox .content input,
+.blogContent .messagesBox .content textarea,
+.blogContent .messagesBox .content ul li input{
+    padding: 10px;
+    background: var(--card-bg);
+    outline: none;
+    border: 1px solid var(--white);
+    width: 100%;
+}
 
 
 
 
+@media(max-width:1151px){
+    
+    .blogContent .blogSider{
+        max-width: 800px;
+    }
 
-
+    .blogContent .blogSider .searchBox{
+        display: none;
+    }
+}
 
 
 
@@ -2351,6 +2646,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
         display: block;
         padding-top: 3rem;
     }
+
 }
 
 
@@ -2404,6 +2700,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
         background-size: cover;
         background-position: center;
     }
+
 }
 
 

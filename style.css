@@ -97,8 +97,6 @@ button{
     cursor: pointer;
 }
 
-
-
 *{
     margin: 0;
     padding: 0;
@@ -153,6 +151,7 @@ header .dropBtnMenu{
     border: none;
     text-transform: capitalize;
     font-size: .8rem;
+    font-family: 'Oxanium', cursive;
     cursor: pointer;
 }
 
@@ -200,10 +199,11 @@ header .dropdown a{
     width: 100%;
     color: var(--black);
     font-weight: 600;
+    font-family: 'Oxanium', cursive;
 }
 
 header .dropdown a:hover{
-    color: var(--orange);
+    background: var(--orange);
 }
 
 header .dropdownMenu:hover .dropdown,
@@ -213,9 +213,6 @@ header .dropdownMenuUser:hover .dropdownUser
     visibility: visible;
     transform: translateY(-15px);
 }
-
-
-
 
 /* Burger Menu */
 header .burger{
@@ -233,8 +230,6 @@ header .burger .bars1{
     margin-top: 3px;
     border-radius: 3px;
 }
-
-
 
 /* Hidden Nav */
 nav .hiddenNav{
@@ -339,6 +334,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     bottom: 0;
 }
 
+/* Banner Index */
 .banner{
     width: 100%;
     height: 650px;
@@ -393,8 +389,12 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 
 /* Released Game */
-.contentTitle{
-    background: #0f1b33;
+.titleNewReleaseGame,
+.titleBigMatch,
+.titleTournament,
+.titleProPlayer,
+.titleProduct{
+    background: var(--bodyBg);
     padding-top: 70px;
     display: flex;
     align-items: center;
@@ -404,27 +404,29 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     text-align: center;
 }
 
-.release h3{
-    font-size: 1.8rem;
-}
-
-.contentTitle .title h3{
+.titleNewReleaseGame h3,
+.titleBigMatch h3,
+.titleTournament h3,
+.titleProPlayer h3,
+.titleProduct h3{
+    font-size: 2rem;
     color: var(--white);
     text-transform: capitalize;
     text-align: center;
-    font-size: 2rem;
 }
 
-.contentTitle .title p{
-    margin-top: 10px;
-    max-width: 300px;
-    color: var(--white);
-    font-size: 1rem;
+.titleNewReleaseGame p,
+.titleBigMatch p,
+.titleTournament p,
+.titleProPlayer p,
+.titleProduct p{
+    font-size: 1.1rem;
+    max-width: 500px;
 }
 
 /* Games */
 .newRelease{
-    background: #0f1b33;
+    background: var(--bodyBg);
     padding: 30px 0;
 }
 
@@ -432,15 +434,14 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     display: flex;
     flex-direction: row;
     margin-top: 15px;
-    gap: 115px;
     width: 100%;
     align-items: center;
+    width: 100%;
 }
 
 .newRelease .contentBox .content .cards{
     width: 250px;
     max-height: 600px;
-    margin-left: -96px;
     padding: 10px;
     position: relative;
     cursor: pointer;
@@ -450,6 +451,15 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .newRelease .contentBox .content .cards .images{
     width: 100%;
     position: relative;
+}
+
+.newRelease .contentBox .content .cards .images img,
+.bigMatch .images img,
+.proPlayer .content .cards .images img,
+.newGames .images img,
+.releasedGames2 .content .cards img, 
+.contentGames .cards img{
+    width: 100%;
 }
 
 .newRelease .contentBox .content .cards .details{
@@ -473,7 +483,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     margin-top: 10px;
 }
 
-.newRelease .contentBox .content .cards:hover .details h3{
+.newRelease .contentBox .content .cards:hover .details h3,
+.tournament .cards:hover  ul li,
+.proPlayer .content .cards:hover  h3{
     color: var(--orange);
 }
 
@@ -491,11 +503,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     margin-right: 5px;
 }
 
-.newRelease .contentBox .content .cards img{
-    width: 100%;
-    z-index: -2;
-}
-
 .newRelease .contentBox .content .cards:hover img{
     transform: scale(1.1);
     transition: 1s;
@@ -509,17 +516,8 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     background-size: cover;
 }
 
-.bigMatch h3{
-    font-size: 2.5rem;
-    margin-top: 10px;
-}
-
 .bigMatch .images{
     max-width: 400px;
-}
-
-.bigMatch .images img{
-    width: 100%;
 }
 
 .bigMatch span{
@@ -548,7 +546,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 }
 
 .bigMatch .times .time .days{
-    color: var(--black);
+    color: var(--black-color);
     background: var(--white);
     width: 60px;
     height: 40px;
@@ -647,20 +645,12 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     transition: 1s;
 }
 
-.tournament .cards:hover  ul li{
-    color: var(--orange);
-}
-
 /* Our Pro Player */
 .proPlayer{
     background: url('img/bgProPlayer.jpg');
     background-size: cover;
     background-position: center;
     padding-bottom: 50px;
-}
-
-.proPlayer .title h3{
-    font-size: 2.5rem;
 }
 
 .proPlayer .content{
@@ -681,10 +671,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     position: relative;
     width: 100%;
     overflow: hidden;
-}
-
-.proPlayer .content .cards .images img{
-    width: 100%;
 }
 
 .proPlayer .content .cards .images .overlay{
@@ -739,13 +725,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     text-transform: capitalize;
 }
 
-.proPlayer .content .cards:hover  h3{
-    color: var(--orange);
-}
-
 /* New Games */
 .newGames{
-    background: #0f1b33;
+    background: var(--bodyBg);
     padding: 80px 50px;
     display: flex;
     align-items: center;
@@ -755,10 +737,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .newGames .images{
     max-width: 1000px;
     overflow: hidden;
-}
-
-.newGames .images img{
-    width: 100%;
+    cursor: pointer;
 }
 
 .newGames .images:hover img{
@@ -871,26 +850,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .gammingProduct .content .cards:hover img{
     transform: scale(1.1);
     transition: 1s;
-}
-
-/* Sponsored */
-.sponsored{
-    background: #0f1b33;
-    padding: 100px 8%;
-}
-
-.sponsored .content{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 70px;
-    flex-direction: row;
-    width: 100%;
-}
-
-.sponsored img{
-    width: 150px;
-    height: 150px;
 }
 
 /* NewsLatter */
@@ -1103,7 +1062,8 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerdetailsProduct,
 .bannerCart,
 .bannerBlog,
-.bannerBlogSinglePage{
+.bannerBlogSinglePage,
+.bannerContact{
     background: url('img/bgProPlayer.jpg');
     height: 400px;
     background-position: center;
@@ -1128,10 +1088,14 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerdetailsProduct .aboutTitle h3,
 .bannerCart .aboutTitle h3,
 .bannerBlog .aboutTitle h3,
-.bannerBlogSinglePage .aboutTitle h3{
+.bannerBlogSinglePage .aboutTitle h3,
+.bannerContact .aboutTitle h3,
+.releasedGames2 h3,
+.sayAbout .title{
     color: var(--white);
     text-transform: capitalize;
-    font-size: 3rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .bannerAbout p, 
@@ -1147,10 +1111,13 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .bannerdetailsProduct p,
 .bannerCart p,
 .bannerBlog p,
-.bannerBlogSinglePage p{
+.bannerBlogSinglePage p,
+.bannerContact p,
+.releasedGames2 p{
     color: var(--white);
     font-size: 1.1rem;
     text-transform: capitalize;
+    text-align: center;
 }
 
 .contentAbout{
@@ -1221,23 +1188,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     padding:100px 8%;
 }
 
-
-.releasedGames2 .title{
-    color: var(--white);
-    max-width: 500px;
-    text-align: center;
-}
-
-.releasedGames2 .title h3{
-    font-size: 2.5rem;
-    text-transform: capitalize;
-}
-
-.releasedGames2 .title p{
-    margin-top: 10px;
-    font-size: 1rem;
-}
-
 .releasedGames2 .content{
     display: flex;
     flex-direction: row;
@@ -1258,6 +1208,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 .contentGames .cards{
     background: var(--card-bg);
     width: 250px;
+    cursor: pointer;
 }
 
 .releasedGames2 .content .cards .images span, 
@@ -1269,11 +1220,6 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     text-transform: capitalize;
     top: 10px;
     left: 10px;
-}
-
-.releasedGames2 .content .cards img, 
-.contentGames .cards img{
-    width: 100%;
 }
 
 .releasedGames2 .content .cards:hover img, 
@@ -1345,21 +1291,13 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     padding: 100px 0 !important;
 }
 
-.title{
-    color: var(--white);
-    text-transform: capitalize;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
 .sayAbout .content{
-    gap: 10px;
     display: flex;
+    margin-top: 30px;
 }
 
 .sayAbout .content .cards{
-    background: #09162f;
+    background: var(--bodyBg);
     width: 300px;
     text-align: center;
     padding: 20px;
@@ -1769,11 +1707,12 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 .record{
     display: flex;
-    background: #09162f;
+    background: var(--bodyBg);
     padding: 50px 6%;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
+    justify-content: center;
 }
 
 .record .gameSummary{
@@ -2410,7 +2349,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 
 .blogContent .blogSider .cards h3,
 .blogContent h3,
-.blogContent .messagesBox h3{
+.blogContent .messagesBox h3,
+.contentContact .contact h3,
+.contentContact .messagesBoxh3{
     color: var(--white);
     text-transform: capitalize;
     font-size: 2rem;
@@ -2602,6 +2543,81 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     border: 1px solid var(--white);
     width: 100%;
 }
+
+
+/* Contact */
+.contentContact{
+    background: var(--bodyBg);
+    padding: 100px 8%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    list-style: none;
+}
+
+.contentContact .contact{
+    max-width: 500px;
+}
+
+.contentContact .contact .wrapper{
+    list-style: none;
+    margin-top: 20px;
+}
+
+.contentContact .contact .wrapper .contentWrapper{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.contentContact .contact .wrapper .contentWrapper p{
+    color: var(--white);
+}
+
+.contentContact .contact i{
+    font-size: 2rem;
+    color: orange;
+    margin-right: 10px;
+}
+
+.contentContact .messagesBox{
+    width: 500px;
+}
+
+.contentContact .messagesBox .content{
+    list-style: none;
+}
+
+.contentContact .messagesBox .content li{
+    margin-bottom: 10px;
+}
+
+.messagesBox .content input,
+.messagesBox .content textarea,
+.messagesBox .content ul li input{
+    padding: 10px;
+    background: var(--card-bg);
+    outline: none;
+    border: 1px solid var(--white);
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1098,6 +1098,9 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
     text-align: center;
 }
 
+.titleNewReleaseGame p,
+.titleProPlayer p,
+.gammingProduct p,
 .bannerAbout p, 
 .bannerGames p,
 .bannerGallery p,
@@ -2089,7 +2092,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 }
 
 .contentProductDetails .product .cards{
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .contentProductDetails .product .cards .review{
@@ -2099,7 +2102,7 @@ nav .hiddenNav .navigation .navigator5 ul li a::before
 }
 
 .contentProductDetails .product .images{
-    width: 500px;
+    width: 100%;
 }
 
 .contentProductDetails .product .images img{
